@@ -59,5 +59,26 @@ namespace ProjectorLogic.Business_Logic.Implementation
         {
             contactsDal.InsertNewContact(player, newContact);
         }
+
+        public void UpdatePlayerInfo(string username, string type, string value)
+        {
+            bool found = false;
+            List<ContactInfo> list = contactsDal.GetPlayerInfo(username);
+            for (int i = 0; i < list.ToArray().Length && found==false; i++)
+            {
+                if (list[i].Type == type)
+                {
+                    found = true;
+                }
+            }
+            if (found)
+            {
+                contactsDal.UpdatePlayerInfo(username, type, value);
+            }
+            else
+            {
+                contactsDal.InsertPlayerInfo(username, type, value);
+            }            
+        }
     }
 }

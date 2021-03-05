@@ -13,25 +13,31 @@ namespace Pr0j3ct0r.View_Model
 {
     public class ProfilePageVM : INotifyPropertyChanged
     {
+        private string phone;
         public string Phone
         {
             get {
-                return GetInfoProp("Phone");
+                return phone;
             }
             set {
-                SetInfoProp("Phone", value);
+                phone = value;
+                contactsBL.UpdatePlayerInfo(Cache.Instance.username, "Phone", phone);
                 OnPropertyRaised("Phone");
             }
         }
+
+        private string email;
+        
         public string Email
         {
             get
             {
-                return GetInfoProp("Email");
+                return email;
             }
             set
             {
-                SetInfoProp("Email", value);
+                email = value;
+                contactsBL.UpdatePlayerInfo(Cache.Instance.username, "Email", email);
                 OnPropertyRaised("Email");
             }
         }
@@ -76,7 +82,10 @@ namespace Pr0j3ct0r.View_Model
             {
                 this.Contact.Info.Add(infoItem);
             }
+            this.phone = GetInfoProp("Phone");
+            this.email = GetInfoProp("Email");
         }
+
         private string GetInfoProp(string name)
         {
             string s = contact.Info.FirstOrDefault(x => x.StartsWith(name));

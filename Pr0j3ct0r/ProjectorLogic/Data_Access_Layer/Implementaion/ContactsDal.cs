@@ -68,5 +68,27 @@ namespace ProjectorLogic.Data_Access_Layer.Implementaion
             sql.Parameters.AddWithValue("username2", player2.Username);
             this.DBCommunication.ExecuteSql(sql);
         }
+
+        public void InsertPlayerInfo(string username, string type, string value)
+        {
+            SqlCommand sql = new SqlCommand();
+            sql.CommandText = "Insert into Contact_info values(@username, @type, @value)";
+            DataSet d = new DataSet();
+            sql.Parameters.AddWithValue("username", username);
+            sql.Parameters.AddWithValue("type", type);
+            sql.Parameters.AddWithValue("value", value);
+            this.DBCommunication.FillDataSet(d, sql);
+        }
+
+        public void UpdatePlayerInfo(string username, string type, string value)
+        {
+            SqlCommand sql = new SqlCommand();
+            sql.CommandText = "Update Contact_info set Value = @value where Type = @type and Username = @username";
+            DataSet d = new DataSet();
+            sql.Parameters.AddWithValue("username", username);
+            sql.Parameters.AddWithValue("type", type);
+            sql.Parameters.AddWithValue("value", value);
+            this.DBCommunication.FillDataSet(d, sql);
+        }
     }
 }

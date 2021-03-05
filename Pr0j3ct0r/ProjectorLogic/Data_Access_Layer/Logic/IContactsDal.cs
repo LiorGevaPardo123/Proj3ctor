@@ -13,5 +13,7 @@ namespace ProjectorLogic.Data_Access_Layer.Logic
         void InsertNewContact(PlayerEntity player, PlayerEntity player2);
         void DeleteContactForUser(string username1, string username2);
         List<ContactInfo> GetPlayerInfo(string username);
+        void InsertPlayerInfo(string username, string type, string value);
+        void UpdatePlayerInfo(string username, string type, string value);
     }
 }

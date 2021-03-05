@@ -13,5 +13,6 @@ namespace ProjectorLogic.Business_Logic.Logic
         void InsertNewContactForPlayer(PlayerEntity player, PlayerEntity newContact);
         void DeleteContact(PlayerEntity player, PlayerEntity contactToDelete);
         ContactEntity GetPlayerInfo(string username);
+        void UpdatePlayerInfo(string username, string type, string value);
     }
 }
