@@ -66,8 +66,9 @@ namespace Pr0j3ct0r.User_Interface
             startDateVal.IsEnabled = false;
             desTxt.IsEnabled = false;
             editProjectBtn.Visibility = Visibility.Visible;
-            saveProjectBtn.Visibility = Visibility.Collapsed;          
-            
+            saveProjectBtn.Visibility = Visibility.Collapsed;
+            Project resullt = new Project(vm.Code, DateTime.Parse(startDateVal.Text.ToString()), desTxt.Text);
+            projectBL.UpdateProject(resullt);
         }
 
         private void deleteProjectBtnClick(object sender, RoutedEventArgs e)

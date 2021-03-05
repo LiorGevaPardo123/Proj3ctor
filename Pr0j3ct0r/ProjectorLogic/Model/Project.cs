@@ -82,6 +82,13 @@ namespace ProjectorLogic.Model
             participants = new List<string>();
         }
 
+        public Project(int code, DateTime startDate, string description)
+        {
+            StartDate = startDate;
+            Code = code;
+            Description = description;
+        }
+
         public Project(DataRow row)
         {
             Code = int.Parse(row["Id"].ToString());

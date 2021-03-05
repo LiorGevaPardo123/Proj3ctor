@@ -142,16 +142,14 @@ namespace ProjectorLogic.Data_Access_Layer.Implementaion
         public void UpdateProject(Project project)
         {
             SqlCommand sql = new SqlCommand();
-            sql.CommandText = "UPDATE ProjectT SET Name = @name, Start_Date = convert(date, @startDate), End_Date = convert(date, @endDate), Description = @des, Manager_Id = @manId WHERE ID = @id";
-            sql.Parameters.AddWithValue("name", project.Name);
+            sql.CommandText = "UPDATE ProjectT SET Start_Date = convert(date, @startDate), Description = @description where Id = @Id";
+            sql.Parameters.AddWithValue("Id", project.Code);
             sql.Parameters.AddWithValue("startDate", project.StartDate);
-            if (project.EndDate == DateTime.MinValue)
-                sql.Parameters.AddWithValue("endDate", DBNull.Value);
-            else
-                sql.Parameters.AddWithValue("endDate", project.EndDate);
-            sql.Parameters.AddWithValue("des", project.Description);
-            sql.Parameters.AddWithValue("manId", project.Manager);
-            sql.Parameters.AddWithValue("id", project.Code);
+            //if (project.EndDate == DateTime.MinValue)
+            //    sql.Parameters.AddWithValue("endDate", DBNull.Value);
+            //else
+            //    sql.Parameters.AddWithValue("endDate", project.EndDate);
+            sql.Parameters.AddWithValue("description", project.Description);            
             this.DBCommunication.ExecuteSql(sql);
         }
     }

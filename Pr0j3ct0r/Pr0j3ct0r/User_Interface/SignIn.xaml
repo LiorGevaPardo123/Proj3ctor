@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Margin="-52,278,-48,-58" RenderTransformOrigin="0.5,0.5">
+        <Image Margin="0,278,0,-58" RenderTransformOrigin="0.5,0.5">
             <Image.Source>
                 <BitmapImage UriSource="/images/Sign.jpg" ></BitmapImage>
             </Image.Source>
