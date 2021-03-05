@@ -22,11 +22,9 @@
             </ImageBrush>
         </Grid.Background>
 
-        <MediaElement x:Name="videoPlayer" Margin="5"
-            Grid.Row="0" Grid.Column="0"
-            MediaOpened="videoPlayer_MediaOpened"
-            ScrubbingEnabled="True"
-            LoadedBehavior="Manual" Source="pack://siteoforigin:,,,/Resources/video.mp4"/>
+        <MediaElement x:Name="videoPlayer"  Margin="5" Grid.Row="0" Grid.Column="0" MediaOpened="videoPlayer_MediaOpened" ScrubbingEnabled="True" LoadedBehavior="Manual" Source="../../images/video.mp4">
+           
+        </MediaElement>
 
         <ScrollBar Orientation="Horizontal" Grid.Row="1" Name="sbarPosition" VerticalAlignment="Center" Visibility="Hidden"/>
         <!--#endregion-->       

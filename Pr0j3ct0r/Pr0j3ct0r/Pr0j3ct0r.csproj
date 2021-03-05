@@ -263,7 +263,9 @@
     <Resource Include="images\slower.png" />
     <Resource Include="images\sticky_note.png" />
     <Resource Include="images\stop.png" />
-    <Resource Include="images\video.mp4" />
+    <Resource Include="images\video.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\videoIMG.png" />
     <Resource Include="images\Warning.ico" />
     <Resource Include="images\white.jpg" />
