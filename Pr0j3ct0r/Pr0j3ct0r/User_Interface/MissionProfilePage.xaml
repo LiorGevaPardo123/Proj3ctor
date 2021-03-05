@@ -34,7 +34,11 @@
         <uc:BackBar></uc:BackBar>
         <Grid Grid.Column="1" Grid.ColumnSpan="2">
             <Grid.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="/images/white.jpg"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
             </Grid.Background>        
                         
             <Canvas>

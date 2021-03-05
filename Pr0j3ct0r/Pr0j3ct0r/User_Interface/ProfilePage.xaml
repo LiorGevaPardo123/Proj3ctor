@@ -20,7 +20,11 @@
         <uc:ToolBar></uc:ToolBar>
         <Grid Grid.Column="1" Grid.ColumnSpan="2" Loaded="Grid_Loaded">
             <Grid.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="/images/white.jpg"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
             </Grid.Background>
 
             <Canvas>

@@ -29,7 +29,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="/images/white.jpg"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
             </Grid.Background>
 
             <!--#region the upper window row-->
@@ -110,7 +114,11 @@
                                     <DataTemplate>
                                         <Button x:Name="OpenInProcessMissionBtn" Click="OpenMissionBtnClick" Height="200" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Foreground="{x:Null}">
                                             <Button.Background>
-                                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/folder1.png"/>
+                                                <ImageBrush>
+                                                    <ImageBrush.ImageSource>
+                                                        <BitmapImage UriSource="/images/folder1.png"></BitmapImage>
+                                                    </ImageBrush.ImageSource>
+                                                </ImageBrush>
                                             </Button.Background>
                                             <StackPanel Orientation="Vertical">
                                                 <Label Content="{Binding Name}" FontSize="14"></Label>
@@ -136,7 +144,11 @@
                                     <DataTemplate>
                                         <Button x:Name="OpenPendingMissionBtn" Click="OpenMissionBtnClick" Height="200" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Foreground="{x:Null}">
                                             <Button.Background>
-                                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/folder1.png"/>
+                                                <ImageBrush>
+                                                    <ImageBrush.ImageSource>
+                                                        <BitmapImage UriSource="/images/folder1.png"></BitmapImage>
+                                                    </ImageBrush.ImageSource>
+                                                </ImageBrush>
                                             </Button.Background>
                                             <StackPanel Orientation="Vertical">
                                                 <Label Content="{Binding Name}" FontSize="14"></Label>
@@ -162,7 +174,11 @@
                                     <DataTemplate>
                                         <Button x:Name="OpenDoneMissionBtn" Click="OpenMissionBtnClick" Height="200" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Foreground="{x:Null}">
                                             <Button.Background>
-                                                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/folder1.png"/>
+                                                <ImageBrush>
+                                                    <ImageBrush.ImageSource>
+                                                        <BitmapImage UriSource="/images/folder1.png"></BitmapImage>
+                                                    </ImageBrush.ImageSource>
+                                                </ImageBrush>
                                             </Button.Background>
                                             <StackPanel Orientation="Vertical">
                                                 <Label Content="{Binding Name}" FontSize="14"></Label>

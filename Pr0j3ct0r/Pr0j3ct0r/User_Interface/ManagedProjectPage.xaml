@@ -21,7 +21,11 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="/images/white.jpg"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
             </Grid.Background>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
