@@ -1,0 +1,99 @@
+﻿<Window x:Class="Pr0j3ct0r.User_Interface.ManagedProjectPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:uc="clr-namespace:Pr0j3ct0r.User_Interface"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"       
+        FontSize="15" Height="600" Width="1300" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350.408"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <uc:ProjectBar x:Name="toolbar"></uc:ProjectBar>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="0.6*"></RowDefinition>
+                <RowDefinition Height="0.2*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+            </Grid.Background>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Column="0" >
+                    <materialDesign:PackIcon Kind="PersonTie" Margin="15" Height="52" Width="76"/>
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="36" Margin="0,0,0,30"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Canvas>
+                    <Grid Canvas.Left="100" MaxWidth="700">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Start Date" FontSize="30"></Label>
+                        <Label Name="endDateLbl" Grid.Row="1" Grid.Column="0" Content="End Date" FontSize="30"></Label>
+                        <TextBox Name="startDateVal" IsEnabled="False" Grid.Row="0" Grid.Column="1" Text="{Binding StartDate}" FontSize="30"></TextBox>
+                        <Label Name="endDateVal" Grid.Row="1" Grid.Column="1" Content="{Binding EndDate}" FontSize="30"></Label>
+                        <Label Name="msgEndDateLbl" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Collapsed" Grid.Column="0" FontSize="30"></Label>
+                    </Grid>
+                </Canvas>
+            </Grid>
+            
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Name="editProjectBtn" Click="editProjectBtnClick" Content="Edit Project" FontSize="24" Height="Auto" RenderTransformOrigin="0.388,0.429"/>
+                <Button Grid.Column="1" Visibility="Collapsed" x:Name="saveProjectBtn" Click="saveProjectBtnClick" Content="Save Project" FontSize="24" Height="Auto" RenderTransformOrigin="0.388,0.429"/>
+                <Button  Grid.Column="3" Height="Auto" RenderTransformOrigin="0.388,0.429" Name="deleteProjectBtn" Click="deleteProjectBtnClick" FontSize="24" Foreground="#FF2972F0" Background="Red" BorderBrush="{x:Null}">
+                    <Button.Content>
+                        <materialDesign:PackIcon Kind="Delete" Height="50" Width="50" Foreground="White"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+            
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"  Content="Description" FontSize="30" Margin="100,0,0,0"></Label>
+                <Grid Grid.Row="1" Margin="100,0,100,30">
+                    <ScrollViewer>
+                        <TextBox Name="desTxt" IsEnabled="False" TextWrapping="WrapWithOverflow" Text="{Binding Description}" FontSize="18" >
+                            <TextBox.Background>
+                                <SolidColorBrush Color="LightCyan" Opacity="0.5">
+
+                                </SolidColorBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>

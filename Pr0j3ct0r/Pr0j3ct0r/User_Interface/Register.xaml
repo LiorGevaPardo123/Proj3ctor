@@ -1,0 +1,77 @@
+﻿<Window x:Class="Pr0j3ct0r.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr0j3ct0r"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         Title="Register" Height="570" Width="350" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        FontFamily="Segoe UI Emoji">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
+    </Window.Resources>
+    <Grid Margin="0,-10,0,10">
+        <Rectangle Height="280" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0000"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="280" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0000" Offset="0.111"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.546"/>
+                    <GradientStop Color="#FFFFF300" Offset="0.012"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source = "pack://siteoforigin:,,,/Resources/Sign.jpg" Margin="-52,278,-48,-67" RenderTransformOrigin="0.5,0.5" MaxWidth="350" >
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.409"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1.493"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Rectangle Width="280" Height="342" VerticalAlignment="Bottom" Margin="35,0,35,97" RadiusY="10" RadiusX="10" Fill="White">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="#FFBBBBBB"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid VerticalAlignment="Bottom" Margin="35,80" Height="450">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" Foreground="Gray" FontSize="18"/>
+            <StackPanel VerticalAlignment="Bottom" Margin="15">
+                <TextBox x:Name="FNTxt" Margin="0,10" materialDesign:HintAssist.Hint="First Name" Text="{Binding FirstName}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" TextChanged="FNTxt_TextChanged"/>
+                <TextBox Margin="0,10" materialDesign:HintAssist.Hint="Last Name" Text="{Binding LastName}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Margin="0,10" materialDesign:HintAssist.Hint="Username" Text="{Binding Username}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Margin="0,10" materialDesign:HintAssist.Hint="Password"  Text="{Binding Password}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox Margin="0,10" materialDesign:HintAssist.Hint="Confirm Password" Text="{Binding ConPassword}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="RegisterBtn" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65" Content="REGISTER" Click="RegisterBtn_Click"/>
+        <Label x:Name="TitleLbl" Content="Proj3ctor" HorizontalAlignment="Left" Margin="76,54,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="-0.312,-0.271" FontSize="48" Foreground="#FF4E96FF"/>
+        <Image Source = "pack://siteoforigin:,,,/Resources/Warning.ico" Margin="262,346,56,160" Visibility="{Binding IsAlertOnPassword, Converter={StaticResource VisibleIfTrueConverter}}" RenderTransformOrigin="1.067,0.205" Width="20">
+            <Image.ToolTip>
+                <TextBlock Text="{Binding UserAlertOnPassword}"/>
+            </Image.ToolTip>
+        </Image>
+        <Image Name="error" Source = "pack://siteoforigin:,,,/Resources/Warning.ico" Margin="268,415,62,91" Visibility="{Binding IsAlertOnConfirmPass, Converter={StaticResource VisibleIfTrueConverter}}" RenderTransformOrigin="1.067,0.205" Width="20">
+            <Image.ToolTip>
+                <TextBlock Text="{Binding UserAlertOnConfirmPass}"/>
+            </Image.ToolTip>
+        </Image>
+        <Button x:Name="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="126,510,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Foreground="#FF2187EE" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="LoginBtn_Click"/>
+
+    </Grid>
+</Window>

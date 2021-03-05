@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr0j3ct0r", "Pr0j3ct0r\Pr0j3ct0r.csproj", "{A672632A-532A-464A-9292-C7F7A93E6199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectorLogic", "..\ProjectorLogic\ProjectorLogic\ProjectorLogic.csproj", "{09BF8208-4709-41C7-A759-7C0C21644044}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A672632A-532A-464A-9292-C7F7A93E6199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A672632A-532A-464A-9292-C7F7A93E6199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A672632A-532A-464A-9292-C7F7A93E6199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A672632A-532A-464A-9292-C7F7A93E6199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09BF8208-4709-41C7-A759-7C0C21644044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BF8208-4709-41C7-A759-7C0C21644044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BF8208-4709-41C7-A759-7C0C21644044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BF8208-4709-41C7-A759-7C0C21644044}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BD56B81-CE67-4941-A93F-9FEAD035D17A}
+	EndGlobalSection
+EndGlobal
