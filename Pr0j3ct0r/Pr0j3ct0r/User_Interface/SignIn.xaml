@@ -25,15 +25,11 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source = "pack://siteoforigin:,,,/Resources/Sign.jpg" Margin="-52,278,-48,-58" RenderTransformOrigin="0.5,0.5" MaxWidth="350" >
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="-0.409"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="1.493"/>
-                </TransformGroup>
-            </Image.RenderTransform>
+        <Image Margin="-52,278,-48,-58" RenderTransformOrigin="0.5,0.5">
+            <Image.Source>
+                <BitmapImage UriSource="/images/Sign.jpg" ></BitmapImage>
+            </Image.Source>
+
         </Image>
         <Rectangle Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,80" RadiusY="10" RadiusX="10" Fill="White">
             <Rectangle.Effect>
@@ -49,7 +45,11 @@
             </StackPanel>
         </Grid>
         <Button x:Name="logInBtn" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65" Content="LOGIN" Click="LogInBtn_Click"/>
-        <Image Source="pack://siteoforigin:,,,/Resources/icon.png" Width="100" Height="100" VerticalAlignment="Top" Margin="30"/>
+        <Image Width="100" Height="100" VerticalAlignment="Top" Margin="30">
+            <Image.Source>
+                <BitmapImage UriSource="/images/icon.png" ></BitmapImage>
+            </Image.Source>
+        </Image>
         <Label Content="Proj3ctor" HorizontalAlignment="Left" Margin="74,103,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="-1.923,0.292" FontSize="48" Background="{x:Null}" Foreground="#FF5BADFF"/>                
         <Button x:Name="RegisterBtn" Content="Register" HorizontalAlignment="Left" Margin="125,440,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Foreground="#FF2187EE" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="RegisterBtn_Click"/>
     </Grid>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A672632A-532A-464A-9292-C7F7A93E6199}</ProjectGuid>
+    <ProjectGuid>{3493828D-FC87-4AF9-B06C-7C528B7B2126}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Pr0j3ct0r</RootNamespace>
     <AssemblyName>Pr0j3ct0r</AssemblyName>
@@ -38,13 +38,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="circle_progressbar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\ProjectorLogic\packages\CircleProgressBar.1.0.1\lib\circle_progressbar.dll</HintPath>
+      <HintPath>..\packages\CircleProgressBar.1.0.1\lib\circle_progressbar.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
-      <HintPath>..\..\ProjectorLogic\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
+      <HintPath>..\packages\MaterialDesignColors.2.0.0\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.0.0.2422, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
-      <HintPath>..\..\ProjectorLogic\packages\MaterialDesignThemes.4.0.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+      <HintPath>..\packages\MaterialDesignThemes.4.0.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -59,11 +59,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -121,6 +119,9 @@
     <Compile Include="User_Interface\SharedProjectPage.xaml.cs">
       <DependentUpon>SharedProjectPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interface\SignIn.xaml.cs">
+      <DependentUpon>SignIn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_Interface\ToolBar.xaml.cs">
       <DependentUpon>ToolBar.xaml</DependentUpon>
     </Compile>
@@ -140,85 +141,81 @@
     <Compile Include="View_Model\ProjectsVM.cs" />
     <Compile Include="View_Model\ProjectVM.cs" />
     <Compile Include="View_Model\RegisterVM.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Page Include="User_Interface\AddInteractionsPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\AddMissionPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\AddProjectPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\BackBar.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\ContactsPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\HomePage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\ManagedProjectPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\MissionProfilePage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\MissionsPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\ProfilePage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\ProjectBar.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\ProjectParticipantsPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\ProjectsPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="User_Interface\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\SharedProjectPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\SignIn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="User_Interface\SignIn.xaml.cs">
-      <DependentUpon>SignIn.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="User_Interface\Register.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="User_Interface\ToolBar.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\VideoPlayer.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +229,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -244,76 +242,38 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ProjectorLogic\ProjectorLogic\ProjectorLogic.csproj">
-      <Project>{09bf8208-4709-41c7-a759-7c0c21644044}</Project>
+    <ProjectReference Include="..\ProjectorLogic\ProjectorLogic.csproj">
+      <Project>{33565f40-8c01-49d7-b9c3-8690d9da2d57}</Project>
       <Name>ProjectorLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pause.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\progif.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\white.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Warning.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\videoIMG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Sign.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sticky_note.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\plas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\restart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\faster.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\slower.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\previous.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\video.mp4" />
+    <Resource Include="images\back.png" />
+    <Resource Include="images\faster.png" />
+    <Resource Include="images\folder1.png" />
+    <Resource Include="images\icon.png" />
+    <Resource Include="images\next.png" />
+    <Resource Include="images\pause.png" />
+    <Resource Include="images\plas.png" />
+    <Resource Include="images\play.png" />
+    <Resource Include="images\previous.png" />
+    <Resource Include="images\progif.gif" />
+    <Resource Include="images\restart.png" />
+    <Resource Include="images\Sign.jpg" />
+    <Resource Include="images\slower.png" />
+    <Resource Include="images\sticky_note.png" />
+    <Resource Include="images\stop.png" />
+    <Resource Include="images\video.mp4" />
+    <Resource Include="images\videoIMG.png" />
+    <Resource Include="images\Warning.ico" />
+    <Resource Include="images\white.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
+  <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets'))" />
-    <Error Condition="!Exists('..\..\ProjectorLogic\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\ProjectorLogic\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets'))" />
   </Target>
-  <Import Project="..\..\ProjectorLogic\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\..\ProjectorLogic\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />
 </Project>

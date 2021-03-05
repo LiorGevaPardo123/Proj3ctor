@@ -29,7 +29,11 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="/images/white.jpg"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
             </Grid.Background>
             <!--#endregion-->            
             
@@ -44,7 +48,11 @@
             <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
                 <Button x:Name="videoBtn" Click="VideoBtnClick" VerticalAlignment="Center" HorizontalAlignment="Center" Height="300" Width="500">
                     <Button.Background>
-                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/videoIMG.png"/>
+                        <ImageBrush>
+                            <ImageBrush.ImageSource>
+                                <BitmapImage UriSource="/images/videoIMG.png"></BitmapImage>
+                            </ImageBrush.ImageSource>
+                        </ImageBrush>
                     </Button.Background>
                 </Button>
             </Grid>
