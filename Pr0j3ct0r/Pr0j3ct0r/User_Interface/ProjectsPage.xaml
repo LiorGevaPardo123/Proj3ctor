@@ -17,7 +17,11 @@
         <uc:ToolBar></uc:ToolBar>
         <Grid Grid.Column="1" Grid.ColumnSpan="2">
             <Grid.Background>
-                <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/white.jpg"/>
+                <ImageBrush>
+                    <ImageBrush.ImageSource>
+                        <BitmapImage UriSource="/images/white.jpg"></BitmapImage>
+                    </ImageBrush.ImageSource>
+                </ImageBrush>
             </Grid.Background>           
             <StackPanel Orientation="Horizontal">                
                 <materialDesign:PackIcon Kind="computer" Margin="15" Height="52" Width="76"/>   
@@ -46,7 +50,11 @@
                             <DataTemplate>
                                 <Button x:Name="OpenMyProjectBtn" Height="200" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="OpenMyProjectBtn_Click">
                                     <Button.Background>
-                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/folder1.png"/>
+                                        <ImageBrush>
+                                            <ImageBrush.ImageSource>
+                                                <BitmapImage UriSource="/images/folder1.png"></BitmapImage>
+                                            </ImageBrush.ImageSource>
+                                        </ImageBrush>
                                     </Button.Background>
                                     <StackPanel Orientation="Vertical">
                                         <Label Content="{Binding Name}" FontSize="14"></Label>
@@ -76,7 +84,11 @@
                             <DataTemplate>
                                 <Button x:Name="OpenSharedProjectBtn" Height="200" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="OpenSharedProjectBtn_Click">
                                     <Button.Background>
-                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/folder1.png"/>
+                                        <ImageBrush>
+                                            <ImageBrush.ImageSource>
+                                                <BitmapImage UriSource="/images/folder1.png"></BitmapImage>
+                                            </ImageBrush.ImageSource>
+                                        </ImageBrush>
                                     </Button.Background>
                                     <StackPanel Orientation="Vertical">
                                         <Label Content="{Binding Name}" FontSize="14"></Label>

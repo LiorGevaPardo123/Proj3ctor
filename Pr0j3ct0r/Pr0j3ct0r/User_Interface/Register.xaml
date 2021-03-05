@@ -34,7 +34,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image Source = "pack://siteoforigin:,,,/Resources/Sign.jpg" Margin="-52,278,-48,-67" RenderTransformOrigin="0.5,0.5" MaxWidth="350" >
+        <Image Margin="-52,278,-48,-67" RenderTransformOrigin="0.5,0.5" MaxWidth="350" >
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -43,6 +43,9 @@
                     <TranslateTransform X="1.493"/>
                 </TransformGroup>
             </Image.RenderTransform>
+            <Image.Source>
+                <BitmapImage UriSource="/images/sign.jpg"></BitmapImage>
+            </Image.Source>
         </Image>
         <Rectangle Width="280" Height="342" VerticalAlignment="Bottom" Margin="35,0,35,97" RadiusY="10" RadiusX="10" Fill="White">
             <Rectangle.Effect>
@@ -61,15 +64,21 @@
         </Grid>
         <Button x:Name="RegisterBtn" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,65" Content="REGISTER" Click="RegisterBtn_Click"/>
         <Label x:Name="TitleLbl" Content="Proj3ctor" HorizontalAlignment="Left" Margin="76,54,0,0" VerticalAlignment="Top" Width="200" RenderTransformOrigin="-0.312,-0.271" FontSize="48" Foreground="#FF4E96FF"/>
-        <Image Source = "pack://siteoforigin:,,,/Resources/Warning.ico" Margin="262,346,56,160" Visibility="{Binding IsAlertOnPassword, Converter={StaticResource VisibleIfTrueConverter}}" RenderTransformOrigin="1.067,0.205" Width="20">
+        <Image Margin="262,346,56,160" Visibility="{Binding IsAlertOnPassword, Converter={StaticResource VisibleIfTrueConverter}}" RenderTransformOrigin="1.067,0.205" Width="20">
             <Image.ToolTip>
                 <TextBlock Text="{Binding UserAlertOnPassword}"/>
             </Image.ToolTip>
+            <Image.Source>
+                <BitmapImage UriSource="/images/warning.ico"></BitmapImage>
+            </Image.Source>
         </Image>
-        <Image Name="error" Source = "pack://siteoforigin:,,,/Resources/Warning.ico" Margin="268,415,62,91" Visibility="{Binding IsAlertOnConfirmPass, Converter={StaticResource VisibleIfTrueConverter}}" RenderTransformOrigin="1.067,0.205" Width="20">
+        <Image Name="error" Margin="268,415,62,91" Visibility="{Binding IsAlertOnConfirmPass, Converter={StaticResource VisibleIfTrueConverter}}" RenderTransformOrigin="1.067,0.205" Width="20">
             <Image.ToolTip>
                 <TextBlock Text="{Binding UserAlertOnConfirmPass}"/>
             </Image.ToolTip>
+            <Image.Source>
+                <BitmapImage UriSource="/images/warning.ico"></BitmapImage>
+            </Image.Source>
         </Image>
         <Button x:Name="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="126,510,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Foreground="#FF2187EE" FontWeight="Bold" FontSize="18" BorderBrush="{x:Null}" Click="LoginBtn_Click"/>
 
