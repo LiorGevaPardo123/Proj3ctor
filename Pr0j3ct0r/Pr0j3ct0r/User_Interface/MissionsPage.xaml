@@ -219,7 +219,7 @@
                     <ListBox ItemsSource="{Binding PreviousMissionsList}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}">
+                                <TextBlock FontSize="20" Text="{Binding Name}">
                                     <TextBlock.ToolTip>
                                         <StackPanel>                                            
                                             <Label Content="{Binding Duration}"></Label>                                            
@@ -246,7 +246,7 @@
                     <ListBox ItemsSource="{Binding NextMissionsList}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Name}">
+                                <TextBlock FontSize="20" Text="{Binding Name}">
                                     <TextBlock.ToolTip>
                                         <StackPanel>
                                             <Label Content="{Binding Duration}"></Label>

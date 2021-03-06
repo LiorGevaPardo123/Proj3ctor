@@ -94,8 +94,7 @@
 
             <Canvas>
                 <materialDesign:PackIcon Kind="FileDocument" Margin="15" Height="52" Width="76"/>
-                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="36" Margin="0,15,0,533" Height="52" Canvas.Left="100"/>
-
+                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontSize="36" Margin="0,15,0,533" Height="52" Canvas.Left="100"/>                
             </Canvas>
         </Grid>
     </Grid>

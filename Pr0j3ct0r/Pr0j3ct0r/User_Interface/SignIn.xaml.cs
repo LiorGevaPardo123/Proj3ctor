@@ -60,7 +60,7 @@ namespace Pr0j3ct0r
 
         private void ShowPassClick(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show(passBox.Password);
         }
     }
 }
