@@ -131,7 +131,12 @@ namespace Pr0j3ct0r.User_Interface
 
         private void AddInteractionBtnClick(object sender, RoutedEventArgs e)
         {
-
+            AddInteractionsPage mpp = new AddInteractionsPage();
+            this.Visibility = Visibility.Collapsed;
+            mpp.ShowDialog();
+            missionsByStatusVM.Init();
+            UpdateUserMsg();
+            this.Visibility = Visibility.Visible;
         }
     }
 }

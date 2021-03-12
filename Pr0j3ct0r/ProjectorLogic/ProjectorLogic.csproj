@@ -57,11 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business_Logic\Implementation\ContactsBL.cs" />
+    <Compile Include="Business_Logic\Implementation\CriticalPath.cs" />
     <Compile Include="Business_Logic\Implementation\MissionsBL.cs" />
     <Compile Include="Business_Logic\Implementation\MissionsInteractionsBL.cs" />
     <Compile Include="Business_Logic\Implementation\PlayersBL.cs" />
     <Compile Include="Business_Logic\Implementation\ProjectsBL.cs" />
     <Compile Include="Business_Logic\Logic\IContactsBL.cs" />
+    <Compile Include="Business_Logic\Logic\ICriticalPath.cs" />
     <Compile Include="Business_Logic\Logic\IMissionsBL.cs" />
     <Compile Include="Business_Logic\Logic\IMissionsInteractionsBL.cs" />
     <Compile Include="Business_Logic\Logic\IPlayersBL.cs" />

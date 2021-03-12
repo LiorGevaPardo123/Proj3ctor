@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Pr0j3ct0r.Memory;
+using ProjectorLogic.Business_Logic.Implementation;
+using ProjectorLogic.Business_Logic.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,13 @@ namespace Pr0j3ct0r.User_Interface
     /// </summary>
     public partial class AddInteractionsPage : Window
     {
+        ICriticalPath criticalPath;
+        int num = 0;
         public AddInteractionsPage()
         {
             InitializeComponent();
+            criticalPath = new CriticalPath();
+            num = criticalPath.CalcLongestPath(Cache.Instance.currentProject.Code);
         }
     }
 }
