@@ -88,7 +88,6 @@
     <Compile Include="Model\Mission.cs" />
     <Compile Include="Model\MissionInteractionEntity.cs" />
     <Compile Include="Model\MissionsStatus.cs" />
-    <Compile Include="Model\Node.cs" />
     <Compile Include="Model\PlayerEntity.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
