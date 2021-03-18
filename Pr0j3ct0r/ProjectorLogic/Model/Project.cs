@@ -63,14 +63,7 @@ namespace ProjectorLogic.Model
         {
             get { return missions.ToList(); }
             private set { missions = value; }
-        }
-
-        private Node<Mission> missionTree;
-        public Node<Mission> MissionTree
-        {
-            get { return missionTree; }
-            set { missionTree = value; }
-        }
+        }       
 
         public void addParticipant(string username)
         {
@@ -100,7 +93,7 @@ namespace ProjectorLogic.Model
             participants = new List<string>();
         }
 
-        public Project(string name, DateTime startDate, DateTime endDate, int code, string description, string manager, ICollection<string> participants, ICollection<Mission> missions, Node<Mission> missionTree)
+        public Project(string name, DateTime startDate, DateTime endDate, int code, string description, string manager, ICollection<string> participants, ICollection<Mission> missions)
         {
             Name = name;
             StartDate = startDate;
@@ -109,8 +102,7 @@ namespace ProjectorLogic.Model
             Description = description;
             Manager = manager;
             Participants = participants;
-            Missions = missions;
-            MissionTree = missionTree;
+            Missions = missions;            
         }
     }
 }

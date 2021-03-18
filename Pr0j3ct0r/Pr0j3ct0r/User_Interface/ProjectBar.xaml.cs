@@ -51,7 +51,7 @@ namespace Pr0j3ct0r.User_Interface
 
         private void MissionsBtnClick(object sender, RoutedEventArgs e)
         {
-           MissionsPage page = new MissionsPage(Cache.Instance.currentProject);
+            MissionsPage page = new MissionsPage(Cache.Instance.currentProject);
             var myWindow = Window.GetWindow(this);
             myWindow.Visibility = Visibility.Collapsed;
             page.Show();
@@ -72,6 +72,15 @@ namespace Pr0j3ct0r.User_Interface
                SharedProjectPage page = new SharedProjectPage(Cache.Instance.currentProject);           
                page.Show();  
             }            
+            myWindow.Close();
+        }
+
+        private void AnalysisBtnClick(object sender, RoutedEventArgs e)
+        {
+            CriticalPathForAProjectPage page = new CriticalPathForAProjectPage();
+            var myWindow = Window.GetWindow(this);
+            myWindow.Visibility = Visibility.Collapsed;
+            page.Show();
             myWindow.Close();
         }
     }

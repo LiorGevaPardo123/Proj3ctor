@@ -47,6 +47,14 @@
                         </Button>
                     </StackPanel>
                 </ListViewItem>
+                <ListViewItem x:Name="AnalysisBtnOnToolBar" Padding="1">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ChessKing" Margin="15,15,0,15" Height="52" Width="76"/>
+                        <Button Name="AnalysisBtn" Click="AnalysisBtnClick" BorderBrush="{x:Null}" Foreground="Black" VerticalAlignment="Center" FontSize="36" Background="{x:Null}" Height="60" FontWeight="Normal">
+                            <TextBlock HorizontalAlignment="Left" Text="Analysis"></TextBlock>
+                        </Button>
+                    </StackPanel>
+                </ListViewItem>
                 <ListViewItem Padding="1">
                     <StackPanel Orientation="Horizontal"/>
                 </ListViewItem>                
