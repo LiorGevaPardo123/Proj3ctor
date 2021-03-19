@@ -70,6 +70,11 @@ namespace ProjectorLogic.Business_Logic.Implementation
             return projectsList;
         }
 
+        public Project GetProjectEntityById(int id)
+        {
+            return projectDal.GetProjectEntity(id);
+        }
+
         public List<PlayerEntity> GetProjectParticipantsEntity(int code)
         {
             List<PlayerEntity> result = new List<PlayerEntity>();

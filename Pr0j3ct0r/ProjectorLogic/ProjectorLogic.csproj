@@ -90,6 +90,7 @@
     <Compile Include="Model\MissionsStatus.cs" />
     <Compile Include="Model\PlayerEntity.cs" />
     <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\ProjectChartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

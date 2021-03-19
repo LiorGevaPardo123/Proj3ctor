@@ -73,15 +73,6 @@ namespace Pr0j3ct0r.User_Interface
                page.Show();  
             }            
             myWindow.Close();
-        }
-
-        private void AnalysisBtnClick(object sender, RoutedEventArgs e)
-        {
-            CriticalPathForAProjectPage page = new CriticalPathForAProjectPage();
-            var myWindow = Window.GetWindow(this);
-            myWindow.Visibility = Visibility.Collapsed;
-            page.Show();
-            myWindow.Close();
-        }
+        }       
     }
 }

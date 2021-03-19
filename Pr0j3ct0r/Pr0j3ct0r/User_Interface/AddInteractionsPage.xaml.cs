@@ -21,14 +21,10 @@ namespace Pr0j3ct0r.User_Interface
     /// Interaction logic for AddInteractionsPage.xaml
     /// </summary>
     public partial class AddInteractionsPage : Window
-    {
-        ICriticalPath criticalPath;
-        int num = 0;
+    {        
         public AddInteractionsPage()
         {
-            InitializeComponent();
-            criticalPath = new CriticalPath();
-            num = criticalPath.CalcLongestPath(Cache.Instance.currentProject.Code);
+            InitializeComponent();            
         }
     }
 }

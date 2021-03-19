@@ -14,6 +14,7 @@ namespace ProjectorLogic.Business_Logic.Logic
         List<Project> GetPersonalParticipantProjects(string username);
         void CreateNewProject(Project project);
         List<PlayerEntity> GetProjectParticipantsEntity(int code);
+        Project GetProjectEntityById(int id);
         void UpdateProject(Project project);
         void AddUserToProjectParticipants(string username, int id);
         void RemoveParticipantFromAProject(string username, int id);
