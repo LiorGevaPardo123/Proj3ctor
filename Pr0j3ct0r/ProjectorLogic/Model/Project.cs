@@ -82,6 +82,12 @@ namespace ProjectorLogic.Model
             Description = description;
         }
 
+        public Project(int code, DateTime endDate)
+        {
+            EndDate = endDate;            
+            Code = code;           
+        }
+
         public Project(DataRow row)
         {
             Code = int.Parse(row["Id"].ToString());

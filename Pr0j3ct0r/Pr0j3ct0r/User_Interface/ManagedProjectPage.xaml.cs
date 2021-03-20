@@ -78,5 +78,15 @@ namespace Pr0j3ct0r.User_Interface
             projectBL.DeleteProject(p);
             toolbar.BackToProjects();        
         }
+
+        private void ProjectDoneBtnClick(object sender, RoutedEventArgs e)
+        {
+            endDateLbl.Visibility = Visibility.Visible;
+            endDateVal.Visibility = Visibility.Visible;
+            this.msgEndDateLbl.Visibility = Visibility.Collapsed;
+            endDateVal.Text = DateTime.Today.ToString();
+            Project resullt = new Project(vm.Code, DateTime.Parse(endDateVal.Text.ToString()));
+            projectBL.SetEndDate(resullt);
+        }
     }
 }

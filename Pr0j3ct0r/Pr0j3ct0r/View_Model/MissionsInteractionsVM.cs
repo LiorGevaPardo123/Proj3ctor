@@ -19,8 +19,7 @@ namespace Pr0j3ct0r.View_Model
             get { return selectedMission; }
             set {
                 selectedMission = value;
-                OnPropertyRaised("SelectedMission");
-
+                OnPropertyRaised("SelectedMission");                
                 NextMissionsList.Clear();
                 missionsInteractionsBL.GetNextMissions(
                     new Mission(selectedMission.Name, selectedMission.Duration,
@@ -86,7 +85,8 @@ namespace Pr0j3ct0r.View_Model
             missionsInteractionsBL = new MissionsInteractionsBL();
             NextMissionsList = new ObservableCollection<MissionVM>();
             PreviousMissionsList = new ObservableCollection<MissionVM>();
-            MissionsList = new ObservableCollection<MissionVM>();            
+            MissionsList = new ObservableCollection<MissionVM>();
+            ObservableCollection<MissionVM> tempMissionList = new ObservableCollection<MissionVM>();
             foreach (Mission mission in missionsBL.GetAllMissions(switchProjectVMToProject(curProject)))
             {
                 MissionVM m = new MissionVM()
@@ -99,9 +99,28 @@ namespace Pr0j3ct0r.View_Model
                     Status = mission.StatusId,
                     Progress = mission.Progress
                 };
-                MissionsList.Add(m);
+                MissionsList.Add(m);               
+            }
+            foreach (var cur in MissionsList)
+            {
+                if (IsThereAnInteraction(cur))
+                {
+                    tempMissionList.Add(cur);
+                }
+            }
+            MissionsList.Clear();
+            foreach (var mission in tempMissionList)
+            {
+                MissionsList.Add(mission);
             }
         }
+        private bool IsThereAnInteraction(MissionVM m1)
+        {
+            Mission m = new Mission();
+            m.Id = m1.Code;
+            return !(missionsInteractionsBL.GetNextMissions(m).Count==0 && missionsInteractionsBL.GetPreviousMissions(m).Count == 0);
+        }
+
         public Project switchProjectVMToProject(ProjectVM vm)
         {
             Project result = new Project();

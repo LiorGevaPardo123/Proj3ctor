@@ -12,6 +12,7 @@ namespace ProjectorLogic.Data_Access_Layer.Logic
         void CreateNewProject(Project project);
         bool IsProjectExists(Project project);
         void UpdateProject(Project project);
+        void SetEndDate(int id, DateTime end);
         void DeleteProject(Project project);
         List<Project> GetAllProjects();
         Project GetProjectEntity(int id);

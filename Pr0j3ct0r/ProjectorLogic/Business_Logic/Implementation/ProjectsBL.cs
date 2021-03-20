@@ -97,6 +97,11 @@ namespace ProjectorLogic.Business_Logic.Implementation
             }
         }
 
+        public void SetEndDate(Project p)
+        {
+            projectDal.SetEndDate(p.Code, p.EndDate);
+        }
+
         public void UpdateProject(Project project)
         {
             projectDal.UpdateProject(project);

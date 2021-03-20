@@ -10,5 +10,6 @@ namespace ProjectorLogic.Data_Access_Layer.Logic
     interface IMissionsInteractionsDal
     {
         List<MissionInteractionEntity> GetAllMissionsInteractions();
+        void CreateNewInteraction(int Id1, int Id2);
     }
 }

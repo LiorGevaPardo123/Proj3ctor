@@ -98,7 +98,7 @@ namespace Pr0j3ct0r.User_Interface
             AddMissionPage mpp = new AddMissionPage();
             this.Visibility = Visibility.Collapsed;
             mpp.ShowDialog();
-            missionsByStatusVM.Init();
+            missionsByStatusVM.Init();            
             UpdateUserMsg();
             this.Visibility = Visibility.Visible;
         }          
@@ -109,7 +109,7 @@ namespace Pr0j3ct0r.User_Interface
             MissionProfilePage mpp = new MissionProfilePage(selected, Cache.Instance.currentProject.Manager.UserName == Cache.Instance.username);
             this.Visibility = Visibility.Collapsed;
             mpp.ShowDialog();            
-            missionsByStatusVM.Init();
+            missionsByStatusVM.Init();            
             UpdateUserMsg();
             this.Visibility = Visibility.Visible;
         }

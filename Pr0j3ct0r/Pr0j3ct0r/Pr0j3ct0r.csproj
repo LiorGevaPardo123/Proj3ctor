@@ -152,6 +152,7 @@
     <Compile Include="User_Interface\VideoPlayer.xaml.cs">
       <DependentUpon>VideoPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View_Model\AddInteractionVM.cs" />
     <Compile Include="View_Model\ContactsVM.cs" />
     <Compile Include="View_Model\ContactVM.cs" />
     <Compile Include="View_Model\CriticalPathVM.cs" />

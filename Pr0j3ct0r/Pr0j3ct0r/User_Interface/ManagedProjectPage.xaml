@@ -54,30 +54,29 @@
                         <Label Grid.Row="0" Grid.Column="0" Content="Start Date" FontSize="30"></Label>
                         <Label Name="endDateLbl" Grid.Row="1" Grid.Column="0" Content="End Date" FontSize="30"></Label>
                         <TextBox Name="startDateVal" IsEnabled="False" Grid.Row="0" Grid.Column="1" Text="{Binding StartDate}" FontSize="30"></TextBox>
-                        <Label Name="endDateVal" Grid.Row="1" Grid.Column="1" Content="{Binding EndDate}" FontSize="30"></Label>
+                        <TextBox Name="endDateVal" IsEnabled="False" Grid.Row="1" Grid.Column="1" Text="{Binding EndDate}" FontSize="30"></TextBox>
                         <Label Name="msgEndDateLbl" Grid.Row="1" Grid.ColumnSpan="2" Visibility="Collapsed" Grid.Column="0" FontSize="30"></Label>
                     </Grid>
                 </Canvas>
             </Grid>
-            
+
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
-                    
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Name="editProjectBtn" Click="editProjectBtnClick" Content="Edit Project" FontSize="24" Height="Auto" RenderTransformOrigin="0.388,0.429"/>
-                <Button Grid.Column="1" Visibility="Collapsed" x:Name="saveProjectBtn" Click="saveProjectBtnClick" Content="Save Project" FontSize="24" Height="Auto" RenderTransformOrigin="0.388,0.429"/>
+                <Button Grid.Column="1" Name="editProjectBtn" Click="editProjectBtnClick" Content="Edit Project" FontSize="24" Height="Auto"/>
+                <Button Grid.Column="1" Visibility="Collapsed" x:Name="saveProjectBtn" Click="saveProjectBtnClick" Content="Save Project" FontSize="24" Height="Auto"/>
                 <Button  Grid.Column="3" Height="Auto" RenderTransformOrigin="0.388,0.429" Name="deleteProjectBtn" Click="deleteProjectBtnClick" FontSize="24" Foreground="#FF2972F0" Background="Red" BorderBrush="{x:Null}">
                     <Button.Content>
                         <materialDesign:PackIcon Kind="Delete" Height="50" Width="50" Foreground="White"/>
                     </Button.Content>
                 </Button>
             </Grid>
-            
+
             <Grid Grid.Row="3">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.4*"></RowDefinition>
@@ -96,6 +95,7 @@
                     </ScrollViewer>
                 </Grid>
             </Grid>
+            <Button Name="ProjectDoneBtn" Click="ProjectDoneBtnClick" Content="The Project is Done" HorizontalAlignment="Left" Margin="741,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="184" Height="73" Background="#FF00FF0C" FontWeight="Bold"/>
         </Grid>
 
 

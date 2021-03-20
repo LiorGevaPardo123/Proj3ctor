@@ -18,5 +18,6 @@ namespace ProjectorLogic.Business_Logic.Logic
         void UpdateProject(Project project);
         void AddUserToProjectParticipants(string username, int id);
         void RemoveParticipantFromAProject(string username, int id);
+        void SetEndDate(Project p);
     }
 }

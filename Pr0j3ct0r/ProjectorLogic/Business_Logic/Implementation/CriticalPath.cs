@@ -40,7 +40,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
             indexToId[countMissions+1] = EndState;
 
             duration[countMissions] = 0;
-            duration[countMissions+1] = 1;                
+            duration[countMissions + 1] = 1;             
 
             Dictionary<int, List<int>> interactions = new Dictionary<int, List<int>>();
 
@@ -59,7 +59,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
                 else//אם הוא משימה סופית
                 {
                     ends.Add(mission.Id);
-                    interactions.Add(mission.Id, new List<int>() { EndState});
+                    interactions.Add(mission.Id, new List<int>() { EndState });
                 }
                 if (previous.Count == 0)
                 {
@@ -87,7 +87,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
                 }
             }
 
-            return -dijkstra(graph, findInArray(StartState, indexToId), findInArray(EndState, indexToId), countMissions+2)+1;
+            return -dijkstra(graph, findInArray(StartState, indexToId), findInArray(EndState, indexToId), countMissions+2);
         }
 
         private static int findInArray(int toId, int[] indexToId)

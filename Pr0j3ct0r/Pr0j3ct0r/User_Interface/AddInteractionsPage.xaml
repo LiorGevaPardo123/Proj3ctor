@@ -33,18 +33,40 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Grid.RowSpan="2" Content="Currunt Mission" FontSize="26"></Label>
-                <Label Grid.Column="1" Grid.RowSpan="2" Content="Next Mission" FontSize="26"></Label>
+                <Label Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Current Mission" FontSize="26"></Label>
+                <Label Grid.Column="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="Next Mission" FontSize="26"></Label>
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <ComboBox Grid.Column="0" Grid.RowSpan="2"></ComboBox>
-                <ComboBox Grid.Column="1" Grid.RowSpan="2"></ComboBox>
+                <ComboBox Name="Currunt" Grid.Column="1" Grid.ColumnSpan="2" SelectedItem="{Binding CurruntMission}" ItemsSource="{Binding CurruntMissionsList}" FontSize="20" SelectionChanged="Currunt_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Name}"></Label>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <ComboBox Name="Next" Grid.Column="4" Grid.ColumnSpan="2" SelectedItem="{Binding NextMission}" ItemsSource="{Binding NextMissionsList}" FontSize="20" SelectionChanged="Next_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Name}"></Label>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </Grid>
             <Grid Grid.Row="4">
                 <Grid.ColumnDefinitions>
@@ -52,13 +74,15 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="AddInteractionBtn" Content="Add Interaction" Height="50" FontSize="30" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></Button>
+                <Button x:Name="AddInteractionBtn" Click="AddInteractionBtnClick" Content="Add Interaction" Height="50" FontSize="30" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"></Button>
             </Grid>
             <Canvas>                
                 <materialDesign:PackIcon Kind="Subtasks" Margin="15" Height="52" Width="76"/>
                 <TextBlock Text="Add Interactions" VerticalAlignment="Center" FontSize="36" Margin="0,15,0,533" Height="52" Canvas.Left="100"/>
-            </Canvas>
+            </Canvas>            
         </Grid>
     </Grid>
 </Window>

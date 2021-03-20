@@ -21,6 +21,11 @@ namespace ProjectorLogic.Business_Logic.Implementation
             missionsDal = new MissionDal();
         }
 
+        public void CreateInteraction(int Id1, int Id2)
+        {
+            missionsInteractionsDal.CreateNewInteraction(Id1, Id2);
+        }
+
         public void CreateInteractionsGraph(int projectId)
         {
             List<Mission> allProjectMissions = missionsDal.GetAllMissions()
