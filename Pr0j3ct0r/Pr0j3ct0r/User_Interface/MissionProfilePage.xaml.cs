@@ -68,7 +68,7 @@ namespace Pr0j3ct0r.User_Interface
         private void deleteMissionBtnClick(object sender, RoutedEventArgs e)
         {
             Mission m = new Mission();
-            m.Id = viewModel.Code;
+            m.Id = viewModel.Code;           
             missionsBL.DeleteMission(m);
             this.Close();
         }

@@ -55,10 +55,10 @@
 
                 <ComboBox Name="Currunt" Grid.Column="1" Grid.ColumnSpan="2" SelectedItem="{Binding CurruntMission}" ItemsSource="{Binding CurruntMissionsList}" FontSize="20" SelectionChanged="Currunt_SelectionChanged">
                     <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <Label Content="{Binding Name}"></Label>
+                        <DataTemplate>                               
+                            <Label Content="{Binding Name}"></Label>                            
                         </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                    </ComboBox.ItemTemplate>                    
                 </ComboBox>
                 <ComboBox Name="Next" Grid.Column="4" Grid.ColumnSpan="2" SelectedItem="{Binding NextMission}" ItemsSource="{Binding NextMissionsList}" FontSize="20" SelectionChanged="Next_SelectionChanged">
                     <ComboBox.ItemTemplate>

@@ -38,8 +38,9 @@ namespace Pr0j3ct0r.User_Interface
         }
 
         private void AddInteractionBtnClick(object sender, RoutedEventArgs e)
-        {
-            //missionsInteractionsBL.CreateInteraction();
+        {            
+            missionsInteractionsBL.CreateInteraction(vm.CurruntMission.Code,vm.NextMission.Code);
+            this.Close();
         }
 
         private void Currunt_SelectionChanged(object sender, SelectionChangedEventArgs e)

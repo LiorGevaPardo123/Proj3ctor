@@ -23,7 +23,7 @@ namespace Pr0j3ct0r.View_Model
             get { return missionsList; }
             set { missionsList = value; OnPropertyRaised("MissionsList"); }
         }
-
+        
         private MissionVM curruntMission;
         public MissionVM CurruntMission
         {
@@ -33,11 +33,11 @@ namespace Pr0j3ct0r.View_Model
                 curruntMission = value; OnPropertyRaised("CurruntMission");
                 NextMissionsList.Clear();
                 foreach (var mission in MissionsList)
-                {
-                    if (mission.Code != CurruntMission.Code)
+                {                   
+                    if (mission.Code != CurruntMission.Code && !IsThereAnInteraction(CurruntMission,mission))
                     {
                         NextMissionsList.Add(mission);
-                    }
+                    }                    
                 }                
             }
         }
@@ -74,18 +74,18 @@ namespace Pr0j3ct0r.View_Model
             Project temp = new Project();
             temp.Code = Cache.Instance.currentProject.Code;
             MissionVM missionVM;
+            MissionVM m = new MissionVM();
             foreach (var mission in missionsBL.GetAllMissions(temp))
-            {
+            {                
                 missionVM=new MissionVM() { Code = mission.Id,
                     Description = mission.Description,
                     Name = mission.Name
-                };
-
+                };                
                 MissionsList.Add(missionVM);
-                NextMissionsList.Add(missionVM);
                 CurruntMissionsList.Add(missionVM);
+                NextMissionsList.Add(missionVM);
             } 
-        }
+        }       
 
         private bool IsThereAnInteraction(MissionVM m1, MissionVM m2)
         {
