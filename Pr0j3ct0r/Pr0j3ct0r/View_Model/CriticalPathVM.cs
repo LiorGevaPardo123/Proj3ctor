@@ -18,21 +18,21 @@ namespace Pr0j3ct0r.View_Model
         public List<ProjectChartItem> Data;
         public CriticalPathVM(List<int> projectsId)
         {
-            Project p;
+            Project p;            
             criticalPath = new CriticalPath();
             Data = new List<ProjectChartItem>();
             projectsBL = new ProjectsBL();
             foreach (var item in projectsId)
             {
-                p = projectsBL.GetProjectEntityById(item);
+                p = projectsBL.GetProjectEntityById(item);                
                 if (p.EndDate != DateTime.MinValue)
-                {
+                {                    
                     Data.Add(new ProjectChartItem()
                     {
                         Name = p.Name,
                         Common = Duration(p.StartDate, p.EndDate),
                         Desirable = criticalPath.CalcLongestPath(item)
-                    });
+                });
                 }                
             }
         }

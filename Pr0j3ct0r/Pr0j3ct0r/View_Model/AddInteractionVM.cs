@@ -98,6 +98,13 @@ namespace Pr0j3ct0r.View_Model
                     return true;
                 }
             }
+            foreach (var mission2 in missionsInteractionsBL.GetPreviousMissions(m))
+            {
+                if (mission2.Id == m2.Code)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 

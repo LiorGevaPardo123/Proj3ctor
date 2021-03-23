@@ -23,7 +23,15 @@ namespace ProjectorLogic.Business_Logic.Implementation
 
         public int CalcLongestPath(int projectId)
         {
-            List<Mission> missionsList = missionBL.GetAllMissions(new Project() {Code = projectId});
+            List<Mission> missionsList1 = missionBL.GetAllMissions(new Project() {Code = projectId});
+            List<Mission> missionsList = new List<Mission>();
+            foreach (var temp in missionsList1)
+            {
+                if (!(missionsInteractionsBL.GetNextMissions(temp).Count==0 && missionsInteractionsBL.GetPreviousMissions(temp).Count == 0))
+                {
+                    missionsList.Add(temp);
+                }
+            }
             int countMissions = missionsList.Count;
             int[] indexToId = new int[countMissions + 2];
               
@@ -33,7 +41,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
             for (int i = 0; i < countMissions; i++)
             {
                 indexToId[i] = missionsList[i].Id;
-                duration[i] = -missionsList[i].Duration;
+                duration[i] = missionsList[i].Duration;
             }
 
             indexToId[countMissions] = StartState;
@@ -87,7 +95,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
                 }
             }
 
-            return -dijkstra(graph, findInArray(StartState, indexToId), findInArray(EndState, indexToId), countMissions+2);
+            return dijkstra(graph, findInArray(StartState, indexToId), findInArray(EndState, indexToId), countMissions+2)-1;
         }
 
         private static int findInArray(int toId, int[] indexToId)
@@ -105,10 +113,10 @@ namespace ProjectorLogic.Business_Logic.Implementation
         private int minDistance(int[] dist, bool[] sptSet, int V)
         {
             // Initialize min value 
-            int min = int.MaxValue, min_index = -1;
+            int min = int.MinValue, min_index = -1;
 
             for (int v = 0; v < V; v++)
-                if (sptSet[v] == false && dist[v] <= min)
+                if (sptSet[v] == false && dist[v] >= min)
                 {
                     min = dist[v];
                     min_index = v;
@@ -123,7 +131,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
             bool[] sptSet = new bool[V];             
             for (int i = 0; i < V; i++)
             {
-                dist[i] = int.MaxValue;
+                dist[i] = int.MinValue;
                 sptSet[i] = false;
             }           
             
@@ -136,7 +144,7 @@ namespace ProjectorLogic.Business_Logic.Implementation
                 sptSet[u] = true;
                 
                 for (int v = 0; v < V; v++)                    
-                    if (!sptSet[v] && graph[u, v] != 0 && dist[u] != int.MaxValue && dist[u] + graph[u, v] < dist[v])
+                    if (!sptSet[v] && graph[u, v] != 0 && dist[u] != int.MinValue && dist[u] + graph[u, v] > dist[v])
                         dist[v] = dist[u] + graph[u, v];
             }
 
