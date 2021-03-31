@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -67,10 +68,13 @@ namespace Pr0j3ct0r.User_Interface
 
         private void deleteMissionBtnClick(object sender, RoutedEventArgs e)
         {
-            Mission m = new Mission();
-            m.Id = viewModel.Code;           
-            missionsBL.DeleteMission(m);
-            this.Close();
+            if (System.Windows.Forms.MessageBox.Show("Are you sure you want to delete the mission?", "caption", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Mission m = new Mission();
+                m.Id = viewModel.Code;
+                missionsBL.DeleteMission(m);
+                this.Close();
+            }           
         }
     }
 }

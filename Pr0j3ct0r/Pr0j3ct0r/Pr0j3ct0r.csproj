@@ -113,6 +113,9 @@
     <Compile Include="User_Interface\CriticalPathForAProjectPage.xaml.cs">
       <DependentUpon>CriticalPathForAProjectPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Interface\DeleteInteractionsPage.xaml.cs">
+      <DependentUpon>DeleteInteractionsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_Interface\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -192,6 +195,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="User_Interface\CriticalPathForAProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Interface\DeleteInteractionsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,6 +16,8 @@ namespace Pr0j3ct0r.View_Model
     {
         IMissionsInteractionsBL missionsInteractionsBL;
         IMissionsBL missionsBL;
+        Mission m;
+        Mission mNext;
 
         private ObservableCollection<MissionVM> missionsList;
         public ObservableCollection<MissionVM> MissionsList
@@ -30,17 +32,21 @@ namespace Pr0j3ct0r.View_Model
             get { return curruntMission; }
             set
             {
+                m = new Mission();
+                mNext = new Mission();
                 curruntMission = value; OnPropertyRaised("CurruntMission");
                 NextMissionsList.Clear();
+                m.Id = curruntMission.Code;
                 foreach (var mission in MissionsList)
-                {                   
+                {
+                    mNext.Id = mission.Code;
                     if (mission.Code != CurruntMission.Code && !IsThereAnInteraction(CurruntMission,mission))
                     {
                         NextMissionsList.Add(mission);
                     }                    
                 }                
             }
-        }
+        }              
 
         private MissionVM nextMission;
         public MissionVM NextMission

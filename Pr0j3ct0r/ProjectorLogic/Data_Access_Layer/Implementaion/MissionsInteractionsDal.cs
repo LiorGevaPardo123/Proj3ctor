@@ -21,6 +21,15 @@ namespace ProjectorLogic.Data_Access_Layer.Implementaion
             this.DBCommunication.ExecuteSql(sql);
         }
 
+        public void DeleteInteraction(int Id1, int Id2)
+        {
+            SqlCommand sql = new SqlCommand();
+            sql.CommandText = "Delete From Missions_Interactions where Previous_Mission_Id = @Id1 and Next_Mission_Id = @Id2";
+            sql.Parameters.AddWithValue("Id1", Id1);
+            sql.Parameters.AddWithValue("Id2", Id2);
+            this.DBCommunication.ExecuteSql(sql);
+        }
+
         public List<MissionInteractionEntity> GetAllMissionsInteractions()
         {
             List<MissionInteractionEntity> list = new List<MissionInteractionEntity>();

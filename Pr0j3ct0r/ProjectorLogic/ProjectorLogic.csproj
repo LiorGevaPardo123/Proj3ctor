@@ -64,6 +64,7 @@
     <Compile Include="Business_Logic\Implementation\ProjectsBL.cs" />
     <Compile Include="Business_Logic\Logic\IContactsBL.cs" />
     <Compile Include="Business_Logic\Logic\ICriticalPath.cs" />
+    <Compile Include="Business_Logic\Logic\ICriticalPathBL.cs" />
     <Compile Include="Business_Logic\Logic\IMissionsBL.cs" />
     <Compile Include="Business_Logic\Logic\IMissionsInteractionsBL.cs" />
     <Compile Include="Business_Logic\Logic\IPlayersBL.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Data_Access_Layer\Logic\IMissionsStatusDal.cs" />
     <Compile Include="Data_Access_Layer\Logic\IPlayerDal.cs" />
     <Compile Include="Data_Access_Layer\Logic\IProjectDal.cs" />
+    <Compile Include="Model\Activity.cs" />
     <Compile Include="Model\ContactEntity.cs" />
     <Compile Include="Model\ContactInfo.cs" />
     <Compile Include="Model\Mission.cs" />

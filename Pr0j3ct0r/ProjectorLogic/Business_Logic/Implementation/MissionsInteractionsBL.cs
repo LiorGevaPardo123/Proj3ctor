@@ -36,9 +36,12 @@ namespace ProjectorLogic.Business_Logic.Implementation
 
             List<MissionInteractionEntity> projectInetactions= allInteractions
                 .Where(inter => allProjectMissions.Select(p => p.Id).Contains(inter.PreviousId))
-                .ToList();   
-                     
-           
+                .ToList();                                 
+        }
+
+        public void DeleteInteraction(int Id1, int Id2)
+        {
+            missionsInteractionsDal.DeleteInteraction(Id1,Id2);
         }
 
         public List<Mission> GetNextMissions(Mission m)

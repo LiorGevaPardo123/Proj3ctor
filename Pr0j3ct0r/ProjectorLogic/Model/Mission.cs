@@ -54,8 +54,7 @@ namespace ProjectorLogic.Model
         {
             get { return progress; }
             set { progress = value; }
-        }
-
+        }       
 
         public Mission()
         {

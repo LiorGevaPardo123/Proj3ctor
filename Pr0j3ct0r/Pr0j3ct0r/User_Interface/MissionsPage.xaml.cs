@@ -138,5 +138,15 @@ namespace Pr0j3ct0r.User_Interface
             UpdateUserMsg();
             this.Visibility = Visibility.Visible;
         }
+
+        private void DeleteInteractionBtnClick(object sender, RoutedEventArgs e)
+        {
+            DeleteInteractionsPage mpp = new DeleteInteractionsPage();
+            this.Visibility = Visibility.Collapsed;
+            mpp.ShowDialog();
+            missionsByStatusVM.Init();
+            UpdateUserMsg();
+            this.Visibility = Visibility.Visible;
+        }
     }
 }

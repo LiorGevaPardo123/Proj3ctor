@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -25,12 +26,28 @@ namespace Pr0j3ct0r.User_Interface
     public partial class ManagedProjectPage : Window
     {
         public IProjectsBL projectBL;
+        public IMissionsBL missionsBL;
+        
         Project p = new Project();
         public ProjectVM vm { get; private set; }
         public ManagedProjectPage(ProjectVM pvm)
         {            
-            InitializeComponent();           
+            InitializeComponent();
             projectBL = new ProjectsBL();
+            missionsBL = new MissionsBL();
+
+            ProjectDoneBtn.IsEnabled = true;            
+            Project p = new Project();
+            p.Code = pvm.Code;
+            
+            foreach (var mission in missionsBL.GetAllMissions(p))
+            {
+                if (mission.StatusId != 3)
+                {
+                    ProjectDoneBtn.IsEnabled = false;
+                }
+            }                            
+            
             Cache.Instance.currentProject = pvm;
             Cache.Instance.isManagerOfCurrentProject = true;
             this.vm = pvm;
@@ -73,10 +90,14 @@ namespace Pr0j3ct0r.User_Interface
 
         private void deleteProjectBtnClick(object sender, RoutedEventArgs e)
         {
-            Project p = new Project();            
-            p.Code = Cache.Instance.currentProject.Code;           
-            projectBL.DeleteProject(p);
-            toolbar.BackToProjects();        
+            if(System.Windows.Forms.MessageBox.Show("Are you sure you want to delete the project?","caption",MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Project p = new Project();
+                p.Code = Cache.Instance.currentProject.Code;
+                projectBL.DeleteProject(p);
+                toolbar.BackToProjects();
+            }
+                  
         }
 
         private void ProjectDoneBtnClick(object sender, RoutedEventArgs e)

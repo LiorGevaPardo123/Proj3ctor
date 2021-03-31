@@ -13,5 +13,6 @@ namespace ProjectorLogic.Business_Logic.Logic
         List<Mission> GetPreviousMissions(Mission m);
         void CreateInteractionsGraph(int projectId);
         void CreateInteraction(int Id1, int Id2);
+        void DeleteInteraction(int Id1, int Id2);
     }
 }

@@ -54,6 +54,15 @@ namespace Pr0j3ct0r.View_Model
             }
         }
 
+        private MissionVM selectedNextMission;
+
+        public MissionVM SelectedNextMission
+        {
+            get { return selectedNextMission; }
+            set { selectedNextMission = value; OnPropertyRaised("SelectedNextMission");}
+        }
+
+
         private ObservableCollection<MissionVM> missionsList;
         public ObservableCollection<MissionVM> MissionsList
         {
